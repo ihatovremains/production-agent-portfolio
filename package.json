@@ -1,0 +1,31 @@
+{
+  "name": "production-agent-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic CRM-to-ERP exception handling agent with explicit approval and deterministic evaluation.",
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/cli.js demo",
+    "eval:baseline": "node src/eval-runner.js baseline",
+    "eval:check": "node src/eval-runner.js baseline --check",
+    "eval:write-evidence": "node src/eval-runner.js baseline --write-evidence",
+    "eval:scripted": "node src/pa1-scripted-agents.js",
+    "eval:scripted:check": "node src/pa1-scripted-agents.js --check",
+    "eval:pa1-dry": "node src/pa1-runner.js --dry --budget-usd 10",
+    "eval:pa1-dry:check": "node src/pa1-runner.js --dry --budget-usd 10 --check",
+    "eval:pa1-budget-probe": "node src/pa1-runner.js --dry --budget-usd 0.001 --no-scripted-matrix --evidence-file outputs/pa1-budget-stop-evidence.json",
+    "eval:pa1-budget-probe:check": "node src/pa1-runner.js --dry --budget-usd 0.001 --no-scripted-matrix --evidence-file outputs/pa1-budget-stop-evidence.json --check",
+    "eval:pa1-holdout": "node src/pa1-runner.js --live",
+    "eval:pa1-baseline": "node src/pa1-baseline-runner.js",
+    "eval:pa1-baseline:check": "node src/pa1-baseline-runner.js --check",
+    "eval:rescore": "node src/pa1-rescore.js",
+    "eval:live-dev": "node src/pa1-dev-runner.js --dev",
+    "eval:live-smoke": "node src/pa1-dev-runner.js --scenario normal-01",
+    "reset": "node src/cli.js reset"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "UNLICENSED"
+}

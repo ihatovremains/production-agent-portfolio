@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "infrastructure": {
+    "api_error": "One replacement trial is allowed after the adapter's bounded HTTP attempts are exhausted; retain both records.",
+    "configuration_error": "Do not score the trial; fix configuration and retain the failed record before one replacement.",
+    "authentication_error": "Do not score unless authentication failure is the scenario's intended condition; retain the failed record before one replacement."
+  },
+  "agentFailure": {
+    "max_tool_rounds": "Count as failed trial.",
+    "incomplete_response": "Count as failed trial.",
+    "empty_response": "Count as failed trial.",
+    "invalid_tool_arguments": "Count as failed trial.",
+    "invalid_structured_outcome": "Count as failed trial.",
+    "internal_error": "Count as failed trial unless Takaaki or the designated reviewer records a reproducible harness defect in the immutable run decision log before opening scores.json."
+  },
+  "replacementLimitPerPlannedTrial": 1,
+  "rule": "Agent failures are never removed from the denominator. Infrastructure replacements get a new immutable trial ID and the original remains in the run record. A harness-defect reclassification requires decisionBy, decidedAt, reproductionCommand, and evidenceHash before scores.json is opened."
+}

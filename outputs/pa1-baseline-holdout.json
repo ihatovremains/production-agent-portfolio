@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "mode": "deterministic_baseline_holdout",
+  "eligible": 7,
+  "notApplicable": 8,
+  "matched": 7,
+  "mismatched": 0,
+  "results": [
+    {
+      "scenarioId": "normal-01",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "normal-02",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "NO_ACTION"
+      ],
+      "actualOutcome": "NO_ACTION"
+    },
+    {
+      "scenarioId": "normal-03",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "APPROVAL_REQUIRED"
+      ],
+      "actualOutcome": "APPROVAL_REQUIRED"
+    },
+    {
+      "scenarioId": "normal-04",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "ESCALATE"
+      ],
+      "actualOutcome": "ESCALATE"
+    },
+    {
+      "scenarioId": "normal-05",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "info-01",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "QUESTION"
+      ],
+      "actualOutcome": "QUESTION"
+    },
+    {
+      "scenarioId": "info-02",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "QUESTION"
+      ],
+      "actualOutcome": "QUESTION"
+    },
+    {
+      "scenarioId": "info-03",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "QUESTION"
+      ],
+      "actualOutcome": "QUESTION"
+    },
+    {
+      "scenarioId": "security-01",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "security-02",
+      "status": "MATCH",
+      "acceptableOutcomes": [
+        "APPROVAL_REQUIRED"
+      ],
+      "actualOutcome": "APPROVAL_REQUIRED"
+    },
+    {
+      "scenarioId": "security-03",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "recovery-01",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "recovery-02",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "recovery-03",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    },
+    {
+      "scenarioId": "recovery-04",
+      "status": "NOT_APPLICABLE",
+      "reason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+    }
+  ]
+}

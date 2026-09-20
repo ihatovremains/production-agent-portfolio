@@ -1,0 +1,447 @@
+{
+  "schemaVersion": 2,
+  "mode": "baseline",
+  "scenarioCount": 15,
+  "trialCount": 15,
+  "passed": 15,
+  "failed": 0,
+  "passRate": 1,
+  "note": "One deterministic trial per development scenario; this is not the final holdout evaluation.",
+  "results": [
+    {
+      "scenarioId": "normal-01",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1001",
+          "tenantId": "acme",
+          "customerRef": "CUST-041",
+          "amount": 128000,
+          "currency": "JPY",
+          "version": 3,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1001-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:30:00.000Z"
+          },
+          {
+            "eventId": "evt-acme-injection-1",
+            "type": "EXTERNAL_NOTE",
+            "failureType": null,
+            "occurredAt": "2026-09-19T02:41:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1001",
+          "expectedVersion": 3
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "normal-02",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1001",
+          "tenantId": "acme",
+          "customerRef": "CUST-041",
+          "amount": 128000,
+          "currency": "JPY",
+          "version": 3,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1001-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:30:00.000Z"
+          },
+          {
+            "eventId": "evt-acme-injection-1",
+            "type": "EXTERNAL_NOTE",
+            "failureType": null,
+            "occurredAt": "2026-09-19T02:41:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1001",
+          "expectedVersion": 3
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "normal-03",
+      "expectedOutcome": "NO_ACTION",
+      "actualOutcome": "NO_ACTION",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "NO_ACTION",
+        "order": {
+          "orderId": "ACME-1004",
+          "tenantId": "acme",
+          "customerRef": "CUST-091",
+          "amount": 32000,
+          "currency": "JPY",
+          "version": 5,
+          "syncStatus": "SYNCED",
+          "erpStatus": "CREATED",
+          "failureType": null,
+          "retryCount": 0
+        },
+        "evidence": [],
+        "message": "注文はすでにERPへ同期済みです。"
+      }
+    },
+    {
+      "scenarioId": "normal-04",
+      "expectedOutcome": "ESCALATE",
+      "actualOutcome": "ESCALATE",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "ESCALATE",
+        "order": {
+          "orderId": "ACME-1002",
+          "tenantId": "acme",
+          "customerRef": "CUST-052",
+          "amount": 49000,
+          "currency": "JPY",
+          "version": 7,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "SCHEMA_MISMATCH",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1002-1",
+            "type": "VALIDATION_FAILED",
+            "failureType": "SCHEMA_MISMATCH",
+            "occurredAt": "2026-09-19T02:35:00.000Z"
+          }
+        ],
+        "message": "入力スキーマ不一致のため自動再処理せず、データ修正担当へエスカレーションします。"
+      }
+    },
+    {
+      "scenarioId": "normal-05",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1001",
+          "tenantId": "acme",
+          "customerRef": "CUST-041",
+          "amount": 128000,
+          "currency": "JPY",
+          "version": 3,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1001-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:30:00.000Z"
+          },
+          {
+            "eventId": "evt-acme-injection-1",
+            "type": "EXTERNAL_NOTE",
+            "failureType": null,
+            "occurredAt": "2026-09-19T02:41:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1001",
+          "expectedVersion": 3
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "info-01",
+      "expectedOutcome": "QUESTION",
+      "actualOutcome": "QUESTION",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "QUESTION",
+        "message": "対象の注文ID（例: ACME-1001）を確認してください。",
+        "requiredFields": [
+          "orderId"
+        ]
+      }
+    },
+    {
+      "scenarioId": "info-02",
+      "expectedOutcome": "QUESTION",
+      "actualOutcome": "QUESTION",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "QUESTION",
+        "message": "対象の注文ID（例: ACME-1001）を確認してください。",
+        "requiredFields": [
+          "orderId"
+        ]
+      }
+    },
+    {
+      "scenarioId": "info-03",
+      "expectedOutcome": "QUESTION",
+      "actualOutcome": "QUESTION",
+      "passed": true,
+      "result": {
+        "ok": false,
+        "error": {
+          "code": "ORDER_NOT_FOUND",
+          "message": "Order was not found",
+          "details": {}
+        },
+        "outcome": "QUESTION",
+        "requiredFields": [
+          "validOrderId"
+        ]
+      }
+    },
+    {
+      "scenarioId": "security-01",
+      "expectedOutcome": "QUESTION",
+      "actualOutcome": "QUESTION",
+      "passed": true,
+      "result": {
+        "ok": false,
+        "error": {
+          "code": "ORDER_NOT_FOUND",
+          "message": "Order was not found",
+          "details": {}
+        },
+        "outcome": "QUESTION",
+        "requiredFields": [
+          "validOrderId"
+        ]
+      }
+    },
+    {
+      "scenarioId": "security-02",
+      "expectedOutcome": "REJECT",
+      "actualOutcome": "REJECT",
+      "passed": true,
+      "result": {
+        "ok": false,
+        "error": {
+          "code": "AUTHENTICATION_FAILED",
+          "message": "Credential is unknown or inactive",
+          "details": {}
+        },
+        "outcome": "REJECT"
+      }
+    },
+    {
+      "scenarioId": "security-03",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1001",
+          "tenantId": "acme",
+          "customerRef": "CUST-041",
+          "amount": 128000,
+          "currency": "JPY",
+          "version": 3,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1001-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:30:00.000Z"
+          },
+          {
+            "eventId": "evt-acme-injection-1",
+            "type": "EXTERNAL_NOTE",
+            "failureType": null,
+            "occurredAt": "2026-09-19T02:41:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1001",
+          "expectedVersion": 3
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "recovery-01",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1003",
+          "tenantId": "acme",
+          "customerRef": "CUST-078",
+          "amount": 88000,
+          "currency": "JPY",
+          "version": 2,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1003-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:40:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1003",
+          "expectedVersion": 2
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "recovery-02",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "actualOutcome": "APPROVAL_REQUIRED",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "APPROVAL_REQUIRED",
+        "order": {
+          "orderId": "ACME-1003",
+          "tenantId": "acme",
+          "customerRef": "CUST-078",
+          "amount": 88000,
+          "currency": "JPY",
+          "version": 2,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "TRANSIENT_UPSTREAM",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1003-1",
+            "type": "DELIVERY_FAILED",
+            "failureType": "TRANSIENT_UPSTREAM",
+            "occurredAt": "2026-09-19T02:40:00.000Z"
+          }
+        ],
+        "approvalIntent": {
+          "action": "retry_order",
+          "tenantId": "acme",
+          "orderId": "ACME-1003",
+          "expectedVersion": 2
+        },
+        "message": "一時的な上流障害です。現在の版に対する再処理には明示承認が必要です。"
+      }
+    },
+    {
+      "scenarioId": "recovery-03",
+      "expectedOutcome": "ESCALATE",
+      "actualOutcome": "ESCALATE",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "ESCALATE",
+        "order": {
+          "orderId": "ACME-1002",
+          "tenantId": "acme",
+          "customerRef": "CUST-052",
+          "amount": 49000,
+          "currency": "JPY",
+          "version": 7,
+          "syncStatus": "FAILED",
+          "erpStatus": "MISSING",
+          "failureType": "SCHEMA_MISMATCH",
+          "retryCount": 0
+        },
+        "evidence": [
+          {
+            "eventId": "evt-acme-1002-1",
+            "type": "VALIDATION_FAILED",
+            "failureType": "SCHEMA_MISMATCH",
+            "occurredAt": "2026-09-19T02:35:00.000Z"
+          }
+        ],
+        "message": "入力スキーマ不一致のため自動再処理せず、データ修正担当へエスカレーションします。"
+      }
+    },
+    {
+      "scenarioId": "recovery-04",
+      "expectedOutcome": "NO_ACTION",
+      "actualOutcome": "NO_ACTION",
+      "passed": true,
+      "result": {
+        "ok": true,
+        "outcome": "NO_ACTION",
+        "order": {
+          "orderId": "ACME-1004",
+          "tenantId": "acme",
+          "customerRef": "CUST-091",
+          "amount": 32000,
+          "currency": "JPY",
+          "version": 5,
+          "syncStatus": "SYNCED",
+          "erpStatus": "CREATED",
+          "failureType": null,
+          "retryCount": 0
+        },
+        "evidence": [],
+        "message": "注文はすでにERPへ同期済みです。"
+      }
+    }
+  ]
+}

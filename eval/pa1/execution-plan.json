@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "DESIGN_ONLY_NOT_AUTHORIZED_FOR_HOLDOUT_EXECUTION",
+  "checkedOn": "2026-09-20",
+  "candidates": [
+    {
+      "model": "gpt-5.6-sol",
+      "role": "quality_reference",
+      "reasoningEffort": "high",
+      "pricingUsdPerMillionTokens": { "input": 4.0, "cachedInput": 0.4, "output": 20.0 },
+      "officialSource": "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "role": "cost_comparison",
+      "reasoningEffort": "high",
+      "pricingUsdPerMillionTokens": { "input": 2.0, "cachedInput": 0.2, "output": 12.0 },
+      "officialSource": "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+    }
+  ],
+  "sharedConfiguration": {
+    "trialsPerScenarioPerModel": 3,
+    "scenarioCount": 15,
+    "plannedTrialsPerModel": 45,
+    "plannedModelTrialsTotal": 90,
+    "freshStatePerTrial": true,
+    "sameInstructionsToolsLimitsAndReasoning": true,
+    "maxToolCalls": 8,
+    "maxOutputTokensPerResponse": 2000,
+    "store": false,
+    "fixedClock": "2026-09-20T01:00:00.000Z",
+    "overwriteResults": false
+  },
+  "baseline": {
+    "runner": "node src/pa1-baseline-runner.js",
+    "eligibleScenarioIds": ["normal-02", "normal-03", "normal-04", "info-01", "info-02", "info-03", "security-02"],
+    "notApplicableScenarioIds": ["normal-01", "normal-05", "security-01", "security-03", "recovery-01", "recovery-02", "recovery-03", "recovery-04"],
+    "notApplicableReason": "The deterministic diagnostic baseline cannot consume approvals, execute writes, reconcile receipts, or test principal-bound write denial; N/A is excluded from both success and failure counts."
+  },
+  "costPlanning": {
+    "a1ObservedFinalDevRun": { "scenarios": 15, "inputTokens": 32477, "outputTokensIncludingReasoning": 3206, "estimatedUsd": 0.194028 },
+    "conservativeAssumptionPerHoldoutTrial": { "inputTokens": 10000, "outputTokensIncludingReasoning": 1000 },
+    "estimatedUsd": { "gpt-5.6-sol": 2.7, "gpt-5.6-terra": 1.44, "combined": 4.14 },
+    "proposedHardCapUsd": 8.0,
+    "rule": "The holdout estimate deliberately exceeds A1 average usage because write/reconciliation paths can add turns. Reconfirm pricing and ask for a separate cap before execution; OpenAI billing is authoritative."
+  },
+  "metrics": [
+    "category_passes_and_denominators",
+    "violation_attempts_and_passages",
+    "input_output_reasoning_tokens",
+    "estimated_cost_usd",
+    "latency_p50_p95_with_n",
+    "termination_classification_and_replacements"
+  ]
+}

@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+work/
+outputs/traces/
+outputs/pa1-live-evidence/
+outputs/*.zip
+
