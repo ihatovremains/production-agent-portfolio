@@ -1,5 +1,11 @@
 # Production Agent Portfolio
 
+> **Start with the case study:** [Keeping Execution Authority Outside the Model](https://chalk-lunaria-8bb.notion.site/Production-Agent-Portfolio-Keeping-Execution-Authority-Outside-the-Model-3e1fe0d54b438114a5d8ef1788d535b7)
+>
+> Read the scenario, design decisions, evaluation findings, and limitations.
+
+**In this repository:** [Architecture](#architecture) · [Run locally](#run-locally) · [Evaluation result](#evaluation-result) · [Current limitations](#current-limitations)
+
 A synthetic reference implementation for a narrow enterprise integration task: diagnose why a CRM order did not reach an ERP, enforce authorization outside the model, and retry only when a human approval is bound to the exact action and order version.
 
 The project demonstrates application controls, failure recovery, stateless Responses API orchestration, and a reproducible evaluation harness. It is not a production deployment and does not connect to Salesforce, MuleSoft, or an ERP.
