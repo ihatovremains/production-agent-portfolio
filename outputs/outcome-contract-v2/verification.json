@@ -1,0 +1,2100 @@
+{
+  "schemaVersion": 1,
+  "contractId": "pa-outcome-contract-v2",
+  "kind": "Deterministic visible-fixture contract verification; no model evaluation",
+  "nodeVersion": "v24.18.0",
+  "fixedClock": "2026-11-02T00:00:00.000Z",
+  "sources": {
+    "src/outcome-contract-v2.js": "a1196003ccdde37c432c3b855aaea8f51c0b4a452080ad89252f77a27e62546d",
+    "src/outcome-contract-v2-checks.js": "d0f080a9664e9a48bb000649c58682ee62abf6e7380a3a544ad6aa279505539f",
+    "test/outcome-contract-v2.test.js": "0b5520e59b33e70b829c3d8c879c9738d4b6bb8b616049fbc4640898bfe2910c",
+    "eval/outcome-contract-v2/cases.json": "fc898603315047a5a7e0b96e0ce6e8f7da6003c98667e62bd52cce720715b06e",
+    "docs/OUTCOME-CONTRACT-V2.md": "1ba393f209a366e3ebaab581d02ec7154206bfabec5d175a0a943898a0a6a26a"
+  },
+  "totals": {
+    "baseCases": 19,
+    "basePassed": 19,
+    "counterexamples": 10,
+    "counterexamplesDetected": 10,
+    "boundaryGuards": 2,
+    "boundaryGuardsPassed": 2
+  },
+  "modelCalls": 0,
+  "legacyScoreEvaluation": "not performed; historical integrity checked separately",
+  "cases": [
+    {
+      "id": "C01",
+      "expectedOutcome": "NO_ACTION",
+      "derivedOutcome": "NO_ACTION",
+      "route": "D5_COMPLETE",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "expectedOutcome": "NO_ACTION",
+      "derivedOutcome": "NO_ACTION",
+      "route": "D5_COMPLETE",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D6_STALE",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "derivedOutcome": "APPROVAL_REQUIRED",
+      "route": "D6_APPROVAL",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "expectedOutcome": "EXECUTED",
+      "derivedOutcome": "EXECUTED",
+      "route": "D3_EXECUTED",
+      "newEffects": 1,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "write_operation_binding",
+          "passed": true
+        },
+        {
+          "name": "supplied_approval_binding",
+          "passed": true
+        },
+        {
+          "name": "execution_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "one_new_effect",
+          "passed": true
+        },
+        {
+          "name": "new_effect_authorized",
+          "passed": true
+        },
+        {
+          "name": "new_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "exact_business_state_delta",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        },
+        {
+          "name": "success_or_replay_receipt",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "expectedOutcome": "NO_ACTION",
+      "derivedOutcome": "NO_ACTION",
+      "route": "D4_DUPLICATE",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "duplicate_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "duplicate_authority",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        },
+        {
+          "name": "success_or_replay_receipt",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C11",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C12",
+      "expectedOutcome": "REJECT",
+      "derivedOutcome": "REJECT",
+      "route": "D1_DENIED",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C13",
+      "expectedOutcome": "APPROVAL_REQUIRED",
+      "derivedOutcome": "APPROVAL_REQUIRED",
+      "route": "D6_APPROVAL",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "search_shape",
+          "passed": true
+        },
+        {
+          "name": "search_unique_targets",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C14",
+      "expectedOutcome": "RESULT_UNKNOWN_RECONCILED",
+      "derivedOutcome": "RESULT_UNKNOWN_RECONCILED",
+      "route": "D2_RECONCILED",
+      "newEffects": 1,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "write_operation_binding",
+          "passed": true
+        },
+        {
+          "name": "supplied_approval_binding",
+          "passed": true
+        },
+        {
+          "name": "one_new_effect",
+          "passed": true
+        },
+        {
+          "name": "new_effect_authorized",
+          "passed": true
+        },
+        {
+          "name": "new_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "exact_business_state_delta",
+          "passed": true
+        },
+        {
+          "name": "reconciliation_attempted",
+          "passed": true
+        },
+        {
+          "name": "no_retry_after_unknown",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        },
+        {
+          "name": "success_or_replay_receipt",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C15",
+      "expectedOutcome": "ESCALATE",
+      "derivedOutcome": "ESCALATE",
+      "route": "D2_UNRESOLVED",
+      "newEffects": 1,
+      "passed": true,
+      "faultInjections": [
+        {
+          "kind": "missing_receipt",
+          "realServiceReturnedReceipt": true,
+          "businessStateModifiedByInjection": false
+        }
+      ],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "write_operation_binding",
+          "passed": true
+        },
+        {
+          "name": "supplied_approval_binding",
+          "passed": true
+        },
+        {
+          "name": "one_new_effect",
+          "passed": true
+        },
+        {
+          "name": "new_effect_authorized",
+          "passed": true
+        },
+        {
+          "name": "new_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "exact_business_state_delta",
+          "passed": true
+        },
+        {
+          "name": "reconciliation_attempted",
+          "passed": true
+        },
+        {
+          "name": "no_retry_after_unknown",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C16",
+      "expectedOutcome": "ESCALATE",
+      "derivedOutcome": "ESCALATE",
+      "route": "D2_UNRESOLVED",
+      "newEffects": 1,
+      "passed": true,
+      "faultInjections": [
+        {
+          "kind": "wrong_operation_receipt",
+          "realServiceReturnedReceipt": true,
+          "businessStateModifiedByInjection": false
+        }
+      ],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "write_operation_binding",
+          "passed": true
+        },
+        {
+          "name": "supplied_approval_binding",
+          "passed": true
+        },
+        {
+          "name": "one_new_effect",
+          "passed": true
+        },
+        {
+          "name": "new_effect_authorized",
+          "passed": true
+        },
+        {
+          "name": "new_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "exact_business_state_delta",
+          "passed": true
+        },
+        {
+          "name": "reconciliation_attempted",
+          "passed": true
+        },
+        {
+          "name": "no_retry_after_unknown",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C17",
+      "expectedOutcome": "QUESTION",
+      "derivedOutcome": "QUESTION",
+      "route": "D7_TARGET",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "search_shape",
+          "passed": true
+        },
+        {
+          "name": "search_unique_targets",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C18",
+      "expectedOutcome": "ESCALATE",
+      "derivedOutcome": "ESCALATE",
+      "route": "D7_DATA",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "C19",
+      "expectedOutcome": "NO_ACTION",
+      "derivedOutcome": "NO_ACTION",
+      "route": "D5_COMPLETE",
+      "newEffects": 0,
+      "passed": true,
+      "faultInjections": [],
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "status_target_binding",
+          "passed": true
+        },
+        {
+          "name": "read_tenant_binding",
+          "passed": true
+        },
+        {
+          "name": "read_state_consistency",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "business_state_unchanged",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "M01",
+      "baseCase": "C02",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M02",
+      "baseCase": "C03",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M03",
+      "baseCase": "C08",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M04",
+      "baseCase": "C12",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M05",
+      "baseCase": "C13",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M06",
+      "baseCase": "C02",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "status_target_binding",
+        "read_state_consistency",
+        "supported_route",
+        "outcome_precedence"
+      ]
+    },
+    {
+      "id": "M07",
+      "baseCase": "C02",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "reported_identifiers"
+      ]
+    },
+    {
+      "id": "M08",
+      "baseCase": "C08",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "duplicate_receipt_binding",
+        "reported_identifiers",
+        "success_or_replay_receipt"
+      ]
+    },
+    {
+      "id": "M09",
+      "baseCase": "C02",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "business_state_unchanged"
+      ]
+    },
+    {
+      "id": "M10",
+      "baseCase": "C16",
+      "expectedVerifierResult": "FAIL",
+      "verifierPassed": false,
+      "detected": true,
+      "failedChecks": [
+        "outcome_precedence",
+        "reported_identifiers",
+        "success_or_replay_receipt"
+      ]
+    }
+  ],
+  "boundaryGuards": [
+    {
+      "id": "G01",
+      "passed": true,
+      "checks": [
+        {
+          "name": "contract_id",
+          "passed": true
+        },
+        {
+          "name": "request_shape",
+          "passed": true
+        },
+        {
+          "name": "reported_target",
+          "passed": true
+        },
+        {
+          "name": "nonempty_summary",
+          "passed": true
+        },
+        {
+          "name": "identifier_shape",
+          "passed": true
+        },
+        {
+          "name": "context_binding",
+          "passed": true
+        },
+        {
+          "name": "tool_shape",
+          "passed": true
+        },
+        {
+          "name": "chronological_events",
+          "passed": true
+        },
+        {
+          "name": "one_operation",
+          "passed": true
+        },
+        {
+          "name": "read_authority",
+          "passed": true
+        },
+        {
+          "name": "no_foreign_tenant_data",
+          "passed": true
+        },
+        {
+          "name": "known_tool_errors",
+          "passed": true
+        },
+        {
+          "name": "retry_response_shape",
+          "passed": true
+        },
+        {
+          "name": "no_mixed_denial_and_effect",
+          "passed": true
+        },
+        {
+          "name": "write_operation_binding",
+          "passed": true
+        },
+        {
+          "name": "supplied_approval_binding",
+          "passed": true
+        },
+        {
+          "name": "one_new_effect",
+          "passed": true
+        },
+        {
+          "name": "new_effect_authorized",
+          "passed": true
+        },
+        {
+          "name": "new_receipt_binding",
+          "passed": true
+        },
+        {
+          "name": "exact_business_state_delta",
+          "passed": true
+        },
+        {
+          "name": "reconciliation_attempted",
+          "passed": true
+        },
+        {
+          "name": "no_retry_after_unknown",
+          "passed": true
+        },
+        {
+          "name": "supported_route",
+          "passed": true
+        },
+        {
+          "name": "outcome_precedence",
+          "passed": true
+        },
+        {
+          "name": "reported_identifiers",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "id": "G02",
+      "passed": true,
+      "rejectedInputs": [
+        "empty identifier",
+        "unrecognized transport error"
+      ]
+    }
+  ]
+}

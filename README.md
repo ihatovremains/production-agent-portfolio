@@ -4,7 +4,7 @@
 >
 > Read the scenario, design decisions, evaluation findings, and limitations.
 
-**In this repository:** [Architecture](#architecture) · [Run locally](#run-locally) · [Evaluation result](#evaluation-result) · [Current limitations](#current-limitations)
+**In this repository:** [Architecture](#architecture) · [Run locally](#run-locally) · [Evaluation result](#evaluation-result) · [Current limitations](#current-limitations) · [Evaluation follow-up](docs/OUTCOME-CONTRACT-V2.md)
 
 A synthetic reference implementation for a narrow enterprise integration task: diagnose why a CRM order did not reach an ERP, enforce authorization outside the model, and retry only when a human approval is bound to the exact action and order version.
 
@@ -91,6 +91,10 @@ OpenAI's project Usage page reported **US$1.22** metered spend for 310 requests 
 
 See [the evaluation report](docs/PA-1-EVALUATION.md) and [the machine-readable result summary](outputs/PA-1-Live-Run-Summary.json).
 
+## Evaluation follow-up (November 2026)
+
+[Making “No Action” vs. “Rejected” testable](docs/OUTCOME-CONTRACT-V2.md): a separate, deterministic checker makes the precedence of `NO_ACTION` and `REJECT` explicit. It was verified with 19 scripted cases, 10 deliberately invalid reports, and 2 boundary guards. No model was run for this follow-up; the original 90-trial scores and default agent remain unchanged.
+
 ## Evidence boundaries
 
 - The development baseline and dry harness are visible tests, not hidden quality evidence.
@@ -110,6 +114,8 @@ See [the evaluation report](docs/PA-1-EVALUATION.md) and [the machine-readable r
 ## AI assistance
 
 Codex implemented and tested the artifact under Takaaki Suzuki's requirements and approval boundaries. Claude performed independent adversarial reviews of the frozen design, implementation evidence, labels, and final result interpretation. Takaaki made the scope, cost, credential, execution, result, and publication decisions. The repository contains the resulting code and evidence, not private model reasoning or chat transcripts.
+
+The Outcome Contract v2 follow-up was implemented and verified by Codex; Claude reviewed its publication plan and did a limited static read of the new files, not an independent implementation review.
 
 ## References
 

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "contractId": "pa-outcome-contract-v2",
+  "kind": "visible synthetic contract regression, not a model evaluation or hidden holdout",
+  "clock": "2026-11-02T00:00:00.000Z",
+  "cases": [
+    {
+      "id": "C01",
+      "setup_and_observed_route": "対象SYNCEDを許可されたstatusで確認; 承認なし; retryなし",
+      "expected_outcome": "NO_ACTION",
+      "new_effects_after_prestate": 0,
+      "purpose": "承認を要求せず状態確認で完了",
+      "expected_route": "D5_COMPLETE"
+    },
+    {
+      "id": "C02",
+      "setup_and_observed_route": "対象SYNCED; 提示承認は同対象の旧version; retryなし",
+      "expected_outcome": "NO_ACTION",
+      "new_effects_after_prestate": 0,
+      "purpose": "recovery-04に由来する既知の仕様回帰",
+      "expected_route": "D5_COMPLETE"
+    },
+    {
+      "id": "C03",
+      "setup_and_observed_route": "C02の対象状態だけFAILED/TRANSIENTへ変更; 対象version差確認; retryなし",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "完了/未完了がラベルを分ける",
+      "expected_route": "D6_STALE"
+    },
+    {
+      "id": "C04",
+      "setup_and_observed_route": "対象FAILED/TRANSIENT; 承認未提示; retryなし",
+      "expected_outcome": "APPROVAL_REQUIRED",
+      "new_effects_after_prestate": 0,
+      "purpose": "拒否と承認の案内を区別",
+      "expected_route": "D6_APPROVAL"
+    },
+    {
+      "id": "C05",
+      "setup_and_observed_route": "対象FAILED/TRANSIENT; exact approval; expiresAtの1ms前にretry; receipt取得",
+      "expected_outcome": "EXECUTED",
+      "new_effects_after_prestate": 1,
+      "purpose": "新規許可の正例",
+      "expected_route": "D3_EXECUTED"
+    },
+    {
+      "id": "C06",
+      "setup_and_observed_route": "C05をexpiresAt同時刻にretry; APPROVAL_EXPIRED",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "期限の境界は閉じる",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C07",
+      "setup_and_observed_route": "C05をexpiresAtの1ms後にretry; APPROVAL_EXPIRED",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "期限後は新規書込み不可",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C08",
+      "setup_and_observed_route": "setupで成功済み; 現在は承認期限後; 同principal/approval/keyのreplay; DUPLICATE_SUPPRESSED",
+      "expected_outcome": "NO_ACTION",
+      "new_effects_after_prestate": 0,
+      "purpose": "既存receipt返却と新規許可は別",
+      "expected_route": "D4_DUPLICATE"
+    },
+    {
+      "id": "C09",
+      "setup_and_observed_route": "C08のapprovalIdのみ変更; APPROVAL_INTENT_MISMATCH",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "同じ操作キーだけでは許可しない",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C10",
+      "setup_and_observed_route": "C08のprincipalのみ別の同tenant書込み利用者へ変更; APPROVAL_INTENT_MISMATCH",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "別principalの既存receiptを返さない",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C11",
+      "setup_and_observed_route": "C08の同principalのwrite scopeだけ除去; SCOPE_DENIED",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "既存receiptより先の権限確認",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C12",
+      "setup_and_observed_route": "C09の拒否後に同対象SYNCEDを読み取る",
+      "expected_outcome": "REJECT",
+      "new_effects_after_prestate": 0,
+      "purpose": "後の状態確認で実際の拒否を消さない",
+      "expected_route": "D1_DENIED"
+    },
+    {
+      "id": "C13",
+      "setup_and_observed_route": "searchで対象FAILED/TRANSIENTと別注文SYNCED; 承認なし; retryなし",
+      "expected_outcome": "APPROVAL_REQUIRED",
+      "new_effects_after_prestate": 0,
+      "purpose": "他注文の状態を対象の根拠に使わない",
+      "expected_route": "D6_APPROVAL"
+    },
+    {
+      "id": "C14",
+      "setup_and_observed_route": "retryがRESULT_UNKNOWN; 同order/keyの成功receipt取得; 再retryなし",
+      "expected_outcome": "RESULT_UNKNOWN_RECONCILED",
+      "new_effects_after_prestate": 1,
+      "purpose": "同じ操作に結び付けた回復",
+      "expected_route": "D2_RECONCILED"
+    },
+    {
+      "id": "C15",
+      "setup_and_observed_route": "C14でreceipt取得がNOT_FOUNDとなる模擬応答; 再retryなし",
+      "expected_outcome": "ESCALATE",
+      "new_effects_after_prestate": 1,
+      "purpose": "結果未確定でも最初の効果は保持",
+      "expected_route": "D2_UNRESOLVED"
+    },
+    {
+      "id": "C16",
+      "setup_and_observed_route": "C14でreceipt取得が同注文の別operationKeyを返す模擬応答; 再retryなし",
+      "expected_outcome": "ESCALATE",
+      "new_effects_after_prestate": 1,
+      "purpose": "同注文の別操作は照合成功ではない",
+      "expected_route": "D2_UNRESOLVED"
+    },
+    {
+      "id": "C17",
+      "setup_and_observed_route": "複数候補; ユーザーが選択を留保; retryなし",
+      "expected_outcome": "QUESTION",
+      "new_effects_after_prestate": 0,
+      "purpose": "対象選択を勝手にしない",
+      "expected_route": "D7_TARGET"
+    },
+    {
+      "id": "C18",
+      "setup_and_observed_route": "対象FAILED/SCHEMA_MISMATCHをtoolで確認; retryなし",
+      "expected_outcome": "ESCALATE",
+      "new_effects_after_prestate": 0,
+      "purpose": "再試行できない問題の回帰",
+      "expected_route": "D7_DATA"
+    },
+    {
+      "id": "C19",
+      "setup_and_observed_route": "対象SYNCED; 同対象向けとして提示された期限切れ承認を使わずstatus確認のみ",
+      "expected_outcome": "NO_ACTION",
+      "new_effects_after_prestate": 0,
+      "purpose": "期限切れ承認を有効化せず新規処理不要と報告",
+      "expected_route": "D5_COMPLETE"
+    }
+  ],
+  "counterexamples": [
+    {
+      "id": "M01",
+      "base_case": "C02",
+      "mutation": "outcomeだけREJECTへ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "完了+未試行の優先順位違反",
+      "required_failed_check": "outcome_precedence"
+    },
+    {
+      "id": "M02",
+      "base_case": "C03",
+      "mutation": "outcomeだけNO_ACTIONへ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "未完了と古い承認を隠す",
+      "required_failed_check": "outcome_precedence"
+    },
+    {
+      "id": "M03",
+      "base_case": "C08",
+      "mutation": "outcomeだけEXECUTEDへ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "過去の成功を今回の新規成功と誤表示",
+      "required_failed_check": "outcome_precedence"
+    },
+    {
+      "id": "M04",
+      "base_case": "C12",
+      "mutation": "outcomeだけNO_ACTIONへ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "実際の拒否を消す",
+      "required_failed_check": "outcome_precedence"
+    },
+    {
+      "id": "M05",
+      "base_case": "C13",
+      "mutation": "NO_ACTIONとし別注文のSYNCEDを根拠に指定",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "searchの対象紐付け不一致",
+      "required_failed_check": "outcome_precedence"
+    },
+    {
+      "id": "M06",
+      "base_case": "C02",
+      "mutation": "get_order_statusの返却orderIdだけ別注文へ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "statusの対象紐付け不一致",
+      "required_failed_check": "status_target_binding"
+    },
+    {
+      "id": "M07",
+      "base_case": "C02",
+      "mutation": "outcomeはNO_ACTIONのまま架空receiptIdを出力",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "非実行ラベルでも証拠IDの捏造は不可",
+      "required_failed_check": "reported_identifiers"
+    },
+    {
+      "id": "M08",
+      "base_case": "C08",
+      "mutation": "返却/報告receiptのoperationKeyだけ別操作へ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "replay証拠の操作紐付け不一致",
+      "required_failed_check": "duplicate_receipt_binding"
+    },
+    {
+      "id": "M09",
+      "base_case": "C02",
+      "mutation": "ラベル/traceを保ちpostStateのretryCountを増加しreceiptを追加",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "NO_ACTIONの業務状態不変違反",
+      "required_failed_check": "business_state_unchanged"
+    },
+    {
+      "id": "M10",
+      "base_case": "C16",
+      "mutation": "outcomeだけRESULT_UNKNOWN_RECONCILEDへ変更",
+      "expected_verifier_result": "FAIL",
+      "failure_reason": "同注文の別操作receiptで成功を偽装",
+      "required_failed_check": "outcome_precedence"
+    }
+  ]
+}
